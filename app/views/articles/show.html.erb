@@ -1,10 +1,24 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
-<p><%= link_to 'articles', articles_path %></p>
-<p><%= link_to 'delete', article_path(@article), method: :delete %></p>
-<p><%= link_to 'edit', 	edit_article_path(@article) %></p>
------------
-<%= render partial: 'comments/form' %>
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-6'>
+			<div class='article'>
+        <div class='article-post'>
+  				<h1 class='article-post-title'><%= @article.title %></h1>
+  				<p class='article-post-body' ><%= @article.body %></p>
+  				<div class='article-post-links'>
+  					<p class='btn .btn-default'><%= link_to 'articles', articles_path %></p>
+  					<p class='btn .btn-default'><%= link_to 'delete', article_path(@article), method: :delete %></p>
+  					<p class='btn .btn-default'><%= link_to 'edit', 	edit_article_path(@article) %></p>
+  				</div>
+        </div>
 
-<h3>List of comment</h3>
-<%= render partial: 'articles/comment', collection: @article.comments%>
+				<div class="article-comments">
+					<%= render partial: 'comments/form' %>
+
+					<h3>List of comment</h3>
+					<%= render partial: 'articles/comment', collection: @article.comments%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

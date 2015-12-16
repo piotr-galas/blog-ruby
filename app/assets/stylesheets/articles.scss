@@ -1,3 +1,18 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.article-post{
+  background-color: #eeeeee;
+  padding:20px;
+}
+
+.article-post-title{
+	color: #666666;
+  margin-bottom:40px;
+}
+.article-post-body{
+   min-width: 300px;
+   min-height: 200px;
+   background-color: #cdcdcd;
+   padding:20px
+}

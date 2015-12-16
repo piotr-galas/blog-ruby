@@ -3,6 +3,13 @@
 		<div class='col-md-6'>
 			<div class='article'>
         <div class='article-post'>
+            <p>
+              Tags:
+            <% @article.tags.each do |tag| %>
+              <%= link_to tag.name, tag_path(tag) %>
+            <% end %>
+            </p>
+
   				<h1 class='article-post-title'><%= @article.title %></h1>
   				<p class='article-post-body' ><%= @article.body %></p>
   				<div class='article-post-links'>

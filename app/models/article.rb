@@ -8,8 +8,7 @@ class Article < ActiveRecord::Base
   end
 
   def tag_list=(tags_string)
-    tag_names = tags_string.split(",").collect{ |s| s.strip.downcase}.uniq
-    self.tags = tag_names.collect{ |name| Tag.find_or_create_by(name: name)}
+    self.tags = TagService.new.find_or_create_by_tags_string(tags_string)
   end
 
 end

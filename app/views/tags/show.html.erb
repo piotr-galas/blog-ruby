@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="tag">
+        <h1 class="tag-title">Articless tagged with <%= @tag.name %></h1>
+        <ul class="tag-articles">
+          <% @tag.articles.each do |article|%>
+            <li><%= link_to article.title, article_path(article) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

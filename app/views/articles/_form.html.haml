@@ -12,6 +12,8 @@
     = f.text_area :body
   %p
     = f.label :image, "Attach an Image"
+    - if @article.image.exists?
+      = image_tag @article.image.url, style: 'max-width:60px'
     %br= f.file_field :image
   %p
     = f.label :tag_list

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Username:
+  = @author.username
+%p
+  %b Email:
+  = @author.email
+%p
+  %b Password:
+  = @author.password
+%p
+  %b Password confirmation:
+  = @author.password_confirmation
+
+= link_to 'Edit', edit_author_path(@author)
+\|
+= link_to 'Back', authors_path

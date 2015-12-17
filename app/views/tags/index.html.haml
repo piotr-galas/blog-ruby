@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-6
+      .tags
+        %p
+          = link_to "back to articles list", articles_path
+        %h2
+          List of all tags:
+        %ul.tags-list
+        - @tags.each do |tag|
+          %li.btn.btn-default= link_to "(#{tag.articles.size}) #{tag.name} ", tag_path(tag)

@@ -16,3 +16,25 @@
    background-color: #cdcdcd;
    padding:20px
 }
+
+.articles{
+  background-color: #eeeeee;
+  padding:20px;
+}
+
+.articles-title{
+  color: #666666;
+  margin-bottom:40px;
+}
+
+.articles-list{
+   min-width: 300px;
+   min-height: 200px;
+   background-color: #cdcdcd;
+   padding:20px
+}
+
+.articles-list_element{
+  list-style: none;
+  font-size:1.2em;
+}

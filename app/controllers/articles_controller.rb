@@ -40,11 +40,9 @@ class ArticlesController < ApplicationController
 		redirect_to article_path(@article)
 	end
 
-
-
 	private
 
 	def article_params
-		params.require(:article).permit(:title, :body, :tag_list)
+		params.require(:article).permit(:title, :body, :tag_list, :image)
 	end
 end

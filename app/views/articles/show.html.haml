@@ -8,6 +8,7 @@
             - @article.tags.each do |tag|
               = link_to tag.name, tag_path(tag)
           %h1.article-post-title= @article.title
+          = image_tag @article.image.url, class: 'article-post-image'
           %p.article-post-body= @article.body
           .article-post-links
             %p.btn{:class => ".btn-default"}= link_to 'articles', articles_path

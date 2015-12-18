@@ -17,5 +17,5 @@
         .article__comments
           = render partial: 'comments/form'
           %h3.article__comments__title
-            List of comment (#{@article.comments.size})
+            Comments (#{@article.comments.size})
           = render partial: 'articles/comment', collection: @article.comments

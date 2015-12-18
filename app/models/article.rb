@@ -7,8 +7,6 @@ class Article < ActiveRecord::Base
   validates_attachment_content_type :image,
    content_type: ['image/jpg','image/jpeg', 'image/png']
 
-
-
   def tag_list
     tags.join(", ")
   end

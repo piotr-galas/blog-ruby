@@ -1,11 +1,19 @@
-%h1
-  Login
-= form_tag author_sessions_path, method: :post do
-  .field
-    = label_tag :email
-    = text_field_tag :email
-  .field
-    = label_tag :password
-    = password_field_tag :password
-  .actions
-    = submit_tag :Login
+.container
+  .row
+    .col-md-12
+      .login-form
+        %h1.login-form__title
+          Login
+        = form_tag author_sessions_path, method: :post, class: 'login-form__form' do
+          .login-form__email
+            = label_tag :email, nil, class: 'login-form__email-label'
+            = text_field_tag :email
+          .login-form__password
+            = label_tag :password, nil, class: 'login-form__password-label'
+            = password_field_tag :password
+          .login-form__submit
+            = submit_tag :Login, class: 'login-form__submit-button'
+      .register-bar
+        dont have account yet?
+        = link_to 'Register', new_author_path, class: 'register-bar__link'
+

@@ -6,3 +6,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.layout-bar{
+  background-color: #d9d9d9;
+  padding:10px;
+  &__log-link{
+    margin: 8px;
+    font-weight: bold;
+    font-size:16px;
+  }
+}
+
+.flash-bar{
+  background-color: #ffaaaa;
+  font-weight: bold;
+  font-size:16px;
+  padding-left: 10px;
+  color: #fff
+}
+

@@ -4,9 +4,9 @@
       .tag
         %p
           = link_to 'Back to tag list', tags_path
-        %h2.tag-title
+        %h2.tag__title
           Articless tagged with #{@tag.name}
-        .tag-articles
-          %ul.tag-articles-list
+        .tag__articles
+          %ul.tag__articles__list
             - @tag.articles.each do |article|
-              %li.tag-articles-list_element= link_to article.title, article_path(article)
+              %li.tag__articles__list__element= link_to article.title, article_path(article)

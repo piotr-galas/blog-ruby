@@ -2,20 +2,20 @@
   .row
     .col-md-6
       .artile
-        .article-post
+        .article__post
           %p
             Tags:
             - @article.tags.each do |tag|
               = link_to tag.name, tag_path(tag)
-          %h1.article-post-title= @article.title
+          %h1.article__post__title= @article.title
           = image_tag @article.image.url(:thumb)
-          %p.article-post-body= @article.body
-          .article-post-links
+          %p.article__post__body= @article.body
+          .article__post__links
             %p.btn{:class => ".btn-default"}= link_to 'articles', articles_path
             %p.btn{:class => ".btn-default"}= link_to 'delete', article_path(@article), method: :delete
             %p.btn{:class => ".btn-default"}= link_to 'edit', 	edit_article_path(@article)
-        .article-comments
+        .article__comments
           = render partial: 'comments/form'
-          %h3
+          %h3.article__comments__title
             List of comment (#{@article.comments.size})
           = render partial: 'articles/comment', collection: @article.comments

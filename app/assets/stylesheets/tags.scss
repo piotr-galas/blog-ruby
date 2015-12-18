@@ -1,26 +1,20 @@
-// Place all the styles related to the tags controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .tag{
   background-color: #eeeeee;
   padding:20px;
-}
-
-.tag-title{
-  color: #666666;
-  margin-bottom:40px;
-}
-
-.tag-articles-list{
-   min-width: 300px;
-   min-height: 200px;
-   background-color: #cdcdcd;
-   padding:20px
-}
-
-.tag-articles-list_element{
-  list-style: none;
-  font-size:1.2em;
+  &__title{
+    color: #666666;
+    margin-bottom:40px;
+  }
+  &__list{
+    min-width: 300px;
+    min-height: 200px;
+    background-color: #cdcdcd;
+    padding:20px
+    &__list_element{
+      list-style: none;
+      font-size:1.2em;
+    }
+  }
 }
 
 .tags{

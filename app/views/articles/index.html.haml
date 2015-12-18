@@ -2,9 +2,9 @@
   .row
     .col-md-6
       .articles
-        %p.articles-link
+        %p.articles__link
           = link_to 'Create new article', new_article_path
-        %h1.srticles-title All Articles
-        %ul.articles-list
+        %h1.srticles__title All Articles
+        %ul.articles__list
           - @articles.each do |article|
-            %li.articles-list_element= link_to article.title, article_path(article)
+            %li.articles__list__element= link_to article.title, article_path(article)

@@ -1,45 +1,45 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.article-post{
-  background-color: #eeeeee;
-  padding:20px;
-}
-
-.article-post-title{
-	color: #666666;
-  margin-bottom:40px;
-}
-.article-post-image{
-  width: 80%;
-  margin: 20px auto;
-}
-.article-post-body{
-   min-width: 300px;
-   min-height: 200px;
-   background-color: #cdcdcd;
-   padding:20px
+.article{
+  &__post{
+    background-color: #eeeeee;
+    padding:20px;
+    &__title{
+      color: #666666;
+      margin-bottom:40px;
+    }
+    &__image{
+      width: 80%;
+      margin: 20px auto;
+    }
+    &__body{
+      min-width: 300px;
+      min-height: 200px;
+      background-color: #cdcdcd;
+      padding:20px
+    }
+  }
 }
 
 .articles{
   background-color: #eeeeee;
   padding:20px;
-}
-
-.articles-title{
-  color: #666666;
-  margin-bottom:40px;
-}
-
-.articles-list{
-   min-width: 300px;
-   min-height: 200px;
-   background-color: #cdcdcd;
-   padding:20px
-}
-
-
-.articles-list_element{
+  &__title{
+    color: #666666;
+    margin-bottom:40px;
+  }
+  &__list{
+     min-width: 300px;
+     min-height: 200px;
+     background-color: #cdcdcd;
+     padding:20px
+  }
+  &__list__element{
   list-style: none;
   font-size:1.2em;
+  }
 }
+
+
+
+
+
+

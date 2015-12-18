@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
-	include ArticlesHelper
+	before_action :set_article, only: [:destroy, :edit, :update, :show]
 
 	def index
 		@articles = Article.all
 	end
 
 	def show
-		@article = Article.find(params[:id])
 		@comment = Comment.new
 		@comment.article_id = @article.id
 	end
@@ -22,17 +21,14 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		@article = Article.find(params[:id])
 		@article.destroy
 		redirect_to articles_path
 	end
 
 	def edit
-		@article = Article.find(params[:id])
 	end
 
 	def update
-		@article = Article.find(params[:id])
 		@article.update(article_params)
 
 		flash.notice = "Article '#{@article.title}' Updated!"
@@ -44,5 +40,9 @@ class ArticlesController < ApplicationController
 
 	def article_params
 		params.require(:article).permit(:title, :body, :tag_list, :image)
+	end
+
+	def set_article
+		@article = Article.find(params[:id])
 	end
 end

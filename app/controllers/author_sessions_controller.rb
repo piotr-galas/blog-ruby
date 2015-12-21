@@ -1,6 +1,7 @@
+# manage login and logout
 class AuthorSessionsController < ApplicationController
-
   before_filter :require_login, only: []
+
   def new
   end
 
@@ -8,7 +9,7 @@ class AuthorSessionsController < ApplicationController
     if login(params[:email], params[:password])
       redirect_to(articles_path, notice: 'Logged in success')
     else
-      flash.now.notice = "login failed"
+      flash.now.notice = 'login failed'
       @email = params[:email]
       render :new
     end
@@ -18,5 +19,4 @@ class AuthorSessionsController < ApplicationController
     logout
     redirect_to(:authors, notice: 'logged out')
   end
-
 end

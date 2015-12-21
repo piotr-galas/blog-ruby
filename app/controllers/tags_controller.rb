@@ -1,6 +1,7 @@
+# Tags related with articles
 class TagsController < ApplicationController
   def show
-    @tag =Tag.find(params[:id])
+    @tag = Tag.find(params[:id])
   end
 
   def index

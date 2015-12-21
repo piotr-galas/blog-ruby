@@ -1,5 +1,6 @@
+# Article service
 class ArticleService
-	def return_published_articles
+  def return_published_articles
     Article.where(title: 'fdf')
-	end
+  end
 end

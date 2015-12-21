@@ -8,8 +8,9 @@ class AuthorSessionsController < ApplicationController
     if login(params[:email], params[:password])
       redirect_to(articles_path, notice: 'Logged in success')
     else
-      flash.now.alert = "login failed"
-      render action: :new
+      flash.now.notice = "login failed"
+      @email = params[:email]
+      render :new
     end
   end
 

@@ -1,7 +1,6 @@
 require 'rails_helper'
-require 'pry'
 RSpec.describe ArticlesController, :type => :controller do
-  describe "ArticleController" do
+
     describe 'GET #index' do
       before do
         get :index
@@ -9,6 +8,7 @@ RSpec.describe ArticlesController, :type => :controller do
       it{ is_expected.to respond_with(200)}
       it{ is_expected.to render_template :index}
     end
+
     describe 'GET #new' do
       context 'when user logged in' do
         let!(:user) { Fabricate(:author) }
@@ -22,8 +22,8 @@ RSpec.describe ArticlesController, :type => :controller do
         before do
           get :new
         end
-        it {is_expected.to redirect_to :tag}
+        it {is_expected.to redirect_to :root}
       end
     end
-  end
+
 end

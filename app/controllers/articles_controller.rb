@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 	before_action :set_article, only: [:destroy, :edit, :update, :show]
 
+
 	def index
 		@articles = Article.all
 	end
@@ -17,8 +18,12 @@ class ArticlesController < ApplicationController
 	def create
 		@article = Article.new(article_params)
 		@article.author = current_user
-		@article.save
-		redirect_to article_path(@article)
+
+    if @article.save
+       redirect_to @article, notice: 'Author was successfully created.'
+    else
+       render :new
+    end
 	end
 
 	def destroy

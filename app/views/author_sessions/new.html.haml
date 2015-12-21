@@ -7,7 +7,7 @@
         = form_tag author_sessions_path, method: :post, class: 'login-form__form' do
           .login-form__email
             = label_tag :email, nil, class: 'login-form__email-label'
-            = text_field_tag :email
+            = text_field_tag :email, @email
           .login-form__password
             = label_tag :password, nil, class: 'login-form__password-label'
             = password_field_tag :password

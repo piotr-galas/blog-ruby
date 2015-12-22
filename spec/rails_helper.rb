@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'pry'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

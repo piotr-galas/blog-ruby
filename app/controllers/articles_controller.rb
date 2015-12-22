@@ -1,6 +1,7 @@
 # Manage articles heart of blog
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:destroy, :edit, :update, :show]
+  before_action :forbiden_not_owner, only: [:update, :edit, :destroy]
 
   def index
     @articles = Article.all
@@ -36,9 +37,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update(article_params)
-
     flash.notice = "Article '#{@article.title}' Updated!"
-
     redirect_to article_path(@article)
   end
 
@@ -50,5 +49,14 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
+  end
+
+  def owner?(article)
+    article.author == current_user
+  end
+
+  def forbiden_not_owner
+    return unless owner? @article
+    redirect_back_not_owner
   end
 end

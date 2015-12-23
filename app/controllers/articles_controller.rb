@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
   end
 
   def forbiden_not_owner
-    return unless owner? @article
+    return if owner? @article
     redirect_back_not_owner
   end
 end

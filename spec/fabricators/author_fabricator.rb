@@ -1,7 +1,7 @@
 Fabricator(:author, class_name: 'Author') do
   id { sequence }
   username { 'piotr' }
-  password { 'pasword' }
+  password { 'password' }
   email { 'galaspiotrek@gmail.com' }
   salt { 'asdasdastr4325234324sdfds' }
   crypted_password do

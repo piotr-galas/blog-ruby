@@ -1,5 +1,6 @@
 # Comments for article
 class StatsController < ApplicationController
-  def create
+  def index
+
   end
 end

@@ -3,8 +3,9 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:destroy, :edit, :update, :show]
   before_action :forbiden_not_owner, only: [:update, :edit, :destroy]
 
+
   def index
-    @articles = Article.all
+    @articles = Article.commented
   end
 
   def show

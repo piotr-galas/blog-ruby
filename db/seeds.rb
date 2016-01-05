@@ -24,7 +24,6 @@ author = Author.create(
 
   2.times do
     article.comments.create(
-      author_name:  Faker::Name.name,
       body:         Faker::Lorem.sentences(1),
       created_at:   Faker::Time.backward(14, :evening),
       author_id:  author.id

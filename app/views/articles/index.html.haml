@@ -5,6 +5,7 @@
         %p.articles__link
           = link_to 'Create new article', new_article_path
         %h1.srticles__title All Articles
+        = render partial: 'filter'
         %ul.articles__list
           - @articles.each do |article|
-            %li.articles__list__element= link_to article.title, article_path(article)
+            %li.articles__list__element= link_to "#{article.title} (#{article.comment_count})", article_path(article)

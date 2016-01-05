@@ -1,0 +1,16 @@
+.row
+  .col-md-12
+    .filter
+      = link_to 'Has comment', articles_path(comment: 'has_any')
+      = link_to 'has two comment', articles_path(comment: 'has_2')
+      = link_to 'has at least two comment', articles_path(comment: 'has_at_least_2')
+      .filter__filter-form
+        = form_tag articles_path, method: :get, class: 'filter__filter-form__form' do
+          .filter__filter-form__comments-number
+            = label_tag :comments_number, nil, class: 'filter__filter-form__comments-number-label'
+            = text_field_tag :comments_number, @filter.comments_number
+          .filter__filter-form__tags-number
+            = label_tag :tags_number, nil, class: 'filter__filter-form__tags-number-label'
+            = text_field_tag :tags_number, @filter.tags_number
+          .filter__filter-form__submit
+            = submit_tag :Submit, class: 'filter__filter-form__submit'

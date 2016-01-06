@@ -1,9 +1,8 @@
 .row
   .col-md-12
     .filter
-      = link_to 'Has comment', articles_path(comment: 'has_any')
-      = link_to 'has two comment', articles_path(comment: 'has_2')
-      = link_to 'has at least two comment', articles_path(comment: 'has_at_least_2')
+      = link_to 'Alphabetical asc', articles_url(params.merge(ordering: 'asc'))
+      = link_to 'Alphabetical desc', params.merge(ordering: 'desc')
       .filter__filter-form
         = form_tag articles_path, method: :get, class: 'filter__filter-form__form' do
           .filter__filter-form__comments-number

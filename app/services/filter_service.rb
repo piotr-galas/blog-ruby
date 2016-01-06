@@ -2,7 +2,7 @@
 # If soem filter is not validated then it will be ignore
 class FilterService
   include ActiveModel::Model
-  attr_accessor :comments_number, :tags_number
+  attr_accessor :comments_number, :tags_number, :ordering
   validates :comments_number, numericality: true
   validates :tags_number, numericality: true
 
@@ -22,7 +22,7 @@ class FilterService
   end
 
   def filter_params(params)
-    params.slice(:comments_number, :tags_number)
+    params.slice(:comments_number, :tags_number, :ordering)
   end
 
   private

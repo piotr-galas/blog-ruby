@@ -15,6 +15,7 @@ class Article < ActiveRecord::Base
   scope :tags_number, ->(tags_number){ select('count(DISTINCT taggings.id) as taggins_count')
                                        .left_join(:taggings)
                                        .having("taggins_count = #{tags_number}") }
+  scope :ordering, ->(ordering){order("articles.title #{ordering}")}
 
   def tag_list
     tags.join(', ')

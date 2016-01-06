@@ -8,13 +8,9 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.count_comment
     @filter = FilterService.new(params)
-
-
     @filter.all_filters.each do |filter_name, filter_value|
-
       @articles = @articles.public_send(filter_name, filter_value)
     end
-
   end
 
   def show
@@ -52,8 +48,6 @@ class ArticlesController < ApplicationController
   end
 
   private
-
-
 
   def article_params
     params.require(:article).permit(:title, :body, :tag_list, :image)

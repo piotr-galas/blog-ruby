@@ -1,8 +1,10 @@
 # Filter service to define and validate filter parameters related to article
+# If soem filter is not validated then it will be ignore
 class FilterService
   include ActiveModel::Model
   attr_accessor :comments_number, :tags_number
   validates :comments_number, numericality: true
+  validates :tags_number, numericality: true
 
   def initialize(params)
     super(filter_params(params))

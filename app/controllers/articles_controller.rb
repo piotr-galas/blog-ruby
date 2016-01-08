@@ -3,14 +3,9 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:destroy, :edit, :update, :show]
   before_action :forbiden_not_owner, only: [:update, :edit, :destroy]
 
-  #it iterate over all filter properties and then
-  # invoke iterated filter on @article model
   def index
-    @articles = Article.count_comment
-    @filter = FilterService.new(params)
-    @filter.all_filters.each do |filter_name, filter_value|
-      @articles = @articles.public_send(filter_name, filter_value)
-    end
+    @filter = FilterArticleService.new(params)
+    @articles = @filter.filter(Article.count_comment)
   end
 
   def show

@@ -3,15 +3,18 @@
 class FilterService
   include ActiveModel::Model
 
-  def initialize(params)
+  # initialize(collection, params)
+  def initialize(collection, params)
     super(clean_params(params))
+    @collection = collection
   end
 
   # It get model, trigger all filter on it and return
   # model after filtering
-  def filter(model)
+  # def execute
+  def execute()
     filters = prepare_filters
-    return_filtered_model(model, filters)
+    return_filtered_model(filters)
   end
 
   private
@@ -27,11 +30,13 @@ class FilterService
     validate_filters(filters)
   end
 
-  def return_filtered_model(model, filters)
-    filters.each do |filter_name, filter_value|
-      model = self.class.send(filter_name, model, filter_value)
+  # use instance variable @model
+  # def filter(filters_hash)
+  def return_filtered_model(filters)
+    filters.each do |name, value|
+      @collection = self.class.send(name, @collection, value)
     end
-    model
+    @collection
   end
 
   # it remove all not validated filter from params

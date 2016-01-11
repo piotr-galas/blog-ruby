@@ -4,8 +4,8 @@ class ArticlesController < ApplicationController
   before_action :forbiden_not_owner, only: [:update, :edit, :destroy]
 
   def index
-    @filter = FilterArticleService.new(params)
-    @articles = @filter.filter(Article.count_comment)
+    @filter = FilterArticleService.new(Article.count_comment, params)
+    @articles = @filter.execute()
   end
 
   def show

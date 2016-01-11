@@ -81,35 +81,4 @@ RSpec.describe FilterArticleService do
       end
     end
   end
-
-  describe 'new instance of filter should validate received parameters' do
-    context 'when parameters is valid' do
-      xit 'should invoke .tags_number' do
-        filter = FilterArticleService.new(tags_number: 2)
-        allow(filter).to receive(:tags_number)
-        filter.filter(Article.count_comment)
-        expect(filter).to have_received(:tags_number)
-      end
-      xit 'should invoke .comments_number' do
-        filter = FilterArticleService.new(comments_number: 2)
-        allow(filter).to receive(:comments_number)
-        filter.filter(Article.count_comment)
-        expect(filter).to have_received(:comments_number)
-      end
-    end
-    context 'when parameters is not valid' do
-      xit 'should not invoke .tags_number' do
-        filter = FilterArticleService.new(tags_number: 'r')
-        allow(filter).to receive(:tags_number)
-        filter.filter(Article.count_comment)
-        expect(filter).to_not have_received(:tags_number)
-      end
-      xit 'should not invoke .comments_number' do
-        filter = FilterArticleService.new(tags_number: 'r')
-        allow(filter).to receive(:comments_number)
-        filter.filter(Article.count_comment)
-        expect(filter).to_not have_received(:commenta_number)
-      end
-    end
-  end
 end

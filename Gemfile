@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
 
 gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
+gem 'puma'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'

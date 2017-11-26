@@ -17,6 +17,7 @@ To install projet please follow standart rails way:
 
 Application is the simple blog inspired on [tutorials.jumpstartlab.com/projects/blogger.html](tutorials.jumpstartlab.com/projects/blogger.html). It is created as sample app to apply new job. There are a few new features which are not included in
 tutorial
+Currently i use this project a base workin app that allow me to test miscellaneous gems and approaches 
 
 
 ## Features:
@@ -27,7 +28,7 @@ tutorial
 * Simple authorization without relation
 
 
-#### New added featurers:
+#### New added features:
 
 * Personalization of comment and article
 * Filtering articles based on [ filtering article](http://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/) and [send_public article](http://vaidehijoshi.github.io/blog/2015/05/05/metaprogramming-dynamic-methods-using-public-send/) and some own improvemnt

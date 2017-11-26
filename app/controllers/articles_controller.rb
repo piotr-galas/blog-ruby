@@ -18,14 +18,20 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.author = current_user
-
-    if @article.save
-      redirect_to @article, notice: 'Author was successfully created.'
-    else
-      render :new
+    result = Articles::PublishByAuthor.new(article_params,current_user)
+    result.on(:missing_body) do |article|
+      flash.now[:notice] = 'body is missing'
+      render :new, locals: { article: article }
     end
+
+    result.on(:missing_title) do |article|
+      flash.now[:notice] = 'title is missing'
+      render :new, locals: { article: article }
+    end
+
+    result.on(:success) { |article| redirect_to article, notice: 'Article was successfully created.'}
+
+    result.call
   end
 
   def destroy
